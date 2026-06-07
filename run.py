@@ -415,6 +415,8 @@ uf.calculate_value_at_risk(ret['Asset 1'], confidence_level=0.05)
 uf.calculate_value_at_risk(ret['Asset 1'], confidence_level=95)
 uf.calculate_value_at_risk(ret['Asset 1'], confidence_level=0.95, method='empirical')
 uf.calculate_value_at_risk(ret['Asset 1'], confidence_level=0.95, method='parametric')
+uf.calculate_value_at_risk(ret['Asset 1'], confidence_level=0.95, method='abc')
+uf.calculate_value_at_risk(ret.loc[:, ['Asset 1', 'Asset 2']])
 
 uf.calculate_expected_shortfall(ret['Asset 1'])
 uf.calculate_expected_shortfall(ret['Asset 1'].to_list(), confidence_level=0.95)
@@ -423,9 +425,11 @@ uf.calculate_expected_shortfall(ret['Asset 1'], confidence_level=0.05)
 uf.calculate_expected_shortfall(ret['Asset 1'], confidence_level=95)
 uf.calculate_expected_shortfall(ret['Asset 1'], confidence_level=0.95, method='empirical')
 uf.calculate_expected_shortfall(ret['Asset 1'], confidence_level=0.95, method='parametric')
+uf.calculate_expected_shortfall(ret.loc[:, ['Asset 1', 'Asset 2']])
 
 uf.calculate_total_return(ret['Asset 1'])
 uf.calculate_total_return(ret['Asset 1'], method='cumulative')
 uf.calculate_total_return(ret['Asset 1'], method='geometric_average')
+uf.calculate_total_return(ret.loc[:, ['Asset 1', 'Asset 2']])
 
 

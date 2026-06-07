@@ -80,6 +80,9 @@ def calculate_value_at_risk(x: np.ndarray, confidence_level: float=0.95, method:
             x = np.asarray(x)
         except Exception as e:
             raise ValueError("Input x must be a numpy array.")
+	# check that input array is one-dimensional
+    if ret.ndim > 1:
+        raise ValueError('ret input must be a vector and not a matrix')
     # check that confidence level is between 0 and 1
     if confidence_level <= 0 or confidence_level >= 1:
         raise ValueError("Confidence level must be between 0 and 1.")
@@ -116,6 +119,9 @@ def calculate_expected_shortfall(x: np.ndarray, confidence_level: float=0.95, me
             x = np.asarray(x)
         except Exception as e:
             raise ValueError("Input x must be a numpy array.")
+	# check that input array is one-dimensional
+    if ret.ndim > 1:
+        raise ValueError('ret input must be a vector and not a matrix')
     # check that confidence level is between 0 and 1
     if confidence_level <= 0 or confidence_level >= 1:
         raise ValueError("Confidence level must be between 0 and 1.")
@@ -153,6 +159,9 @@ def calculate_total_return(x: np.ndarray, method: str='cumulative') -> float:
             x = np.asarray(x)
         except Exception as e:
             raise ValueError("Input x must be a numpy array.")
+	# check that input array is one-dimensional
+    if ret.ndim > 1:
+        raise ValueError('ret input must be a vector and not a matrix')
 
     # calculate total return    
     if method == 'cumulative':
